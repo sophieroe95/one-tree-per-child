@@ -1,0 +1,185 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build db",
+      "icon": {
+        "id": "gear",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "npm run docker:db -- --build",
+      "problemMatcher": []
+    },
+    {
+      "label": "start db",
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "npm",
+      "script": "docker:db",
+      "problemMatcher": []
+    },
+    {
+      "label": "setup db",
+      "icon": {
+        "id": "tools",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "npm",
+      "script": "setup",
+      "problemMatcher": []
+    },
+    {
+      "label": "build db-test",
+      "icon": {
+        "id": "gear",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run docker:db-test -- --build",
+      "problemMatcher": []
+    },
+    {
+      "label": "start db-test",
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "npm",
+      "script": "docker:db-test",
+      "problemMatcher": []
+    },
+    {
+      "label": "setup db-test",
+      "icon": {
+        "id": "tools",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run as:db-test -- 'npm run setup'",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma studio",
+      "icon": {
+        "id": "zap",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "npx prisma studio",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma studio db-test",
+      "icon": {
+        "id": "zap",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run as:db-test -- 'npx prisma studio --port 5556'",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma reset db",
+      "icon": {
+        "id": "refresh",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "npx prisma migrate reset --force",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma reset db-test",
+      "icon": {
+        "id": "refresh",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run as:db-test -- 'npx prisma migrate reset --force'",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma migrate db",
+      "icon": {
+        "id": "database",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "npx prisma migrate dev",
+      "problemMatcher": []
+    },
+    {
+      "label": "prisma pull db",
+      "icon": {
+        "id": "cloud-download",
+        "color": "terminal.ansiCyan"
+      },
+      "type": "shell",
+      "command": "npx prisma db pull",
+      "problemMatcher": []
+    },
+    {
+      "label": "build app (docker)",
+      "icon": {
+        "id": "gear",
+        "color": "terminal.ansiGreen"
+      },
+      "type": "npm",
+      "script": "docker:remix",
+      "problemMatcher": []
+    },
+    {
+      "label": "start app",
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiGreen"
+      },
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": []
+    },
+    {
+      "label": "start app db-test",
+      "icon": {
+        "id": "play",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run as:db-test -- 'npm run dev'",
+      "problemMatcher": []
+    },
+    {
+      "label": "playwright setup",
+      "icon": {
+        "id": "tools",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "npm",
+      "script": "test:e2e:install",
+      "problemMatcher": []
+    },
+    {
+      "label": "run e2e tests",
+      "icon": {
+        "id": "beaker",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run test:e2e ",
+      "problemMatcher": []
+    },
+    {
+      "label": "run e2e tests --ui ",
+      "icon": {
+        "id": "beaker",
+        "color": "terminal.ansiYellow"
+      },
+      "type": "shell",
+      "command": "npm run test:e2e:ui",
+      "problemMatcher": []
+    }
+  ]
+}
